@@ -22,26 +22,26 @@ export default function Pricing() {
             id: "Free",
             name: "Free",
             price: 0,
-            desc: "See what AI can do",
+            desc: "Perfect for testing the waters",
             features: [
-                "Get simple explanations",
-                "Have short chats for common questions",
-                "Try out image generation",
-                "Save limited memory and context"
+                "25 Credits per month",
+                "Access to basic styles",
+                "Standard generation speed",
+                "720p resolution"
             ]
         },
         {
             id: "Go",
             name: "Go",
             price: 399,
-            desc: "Keep chatting with expanded access",
+            desc: "For creators starting their journey",
             features: [
-                "Explore topics in depth",
-                "Chat longer and upload more content",
-                "Make more images for your projects",
-                "Get more memory for smarter replies",
-                "Get help with planning and tasks",
-                "Explore projects, tasks, and custom GPTs"
+                "50 Credits per month",
+                "Access to all premium styles",
+                "No watermarks",
+                "1080p High-def resolution",
+                "Priority generation queue",
+                "Commercial usage rights"
             ]
         },
         {
@@ -49,33 +49,28 @@ export default function Pricing() {
             name: "Plus",
             price: 1999,
             popular: true,
-            desc: "Unlock the full experience",
+            desc: "Best for growing channels",
             features: [
-                "Solve complex problems",
-                "Have long chats over multiple sessions",
-                "Create more images, faster",
-                "Remember goals and past conversations",
-                "Plan travel and tasks with agent mode",
-                "Organize projects and customize GPTs",
-                "Produce and share videos on Sora",
-                "Write code and build apps with Codex"
+                "500 Credits per month",
+                "4K Ultra-HD resolution",
+                "AI Prompt Enhancement",
+                "Faster generation speed",
+                "Priority support",
+                "Save & organize history"
             ]
         },
         {
             id: "Pro",
             name: "Pro",
             price: 19900,
-            desc: "Maximize your productivity",
+            desc: "For professional content studios",
             features: [
-                "Master advanced tasks and topics",
-                "Tackle big projects with unlimited GPT-5.2",
-                "Create high-quality images at any scale",
-                "Keep full context with maximum memory",
-                "Run research and plan tasks with agents",
-                "Scale your projects and automate workflows",
-                "Expand your limits with Sora video creation",
-                "Deploy code faster with Codex",
-                "Get early access to experimental features"
+                "5000 Credits per month",
+                "Highest quality mode",
+                "Bulk generation tools",
+                "Early access to new models",
+                "API Access (Beta)",
+                "Dedicated email support"
             ]
         }
     ];
@@ -86,28 +81,28 @@ export default function Pricing() {
             name: "Team",
             price: 6999,
             popular: true,
-            desc: "Supercharge your team's work",
+            desc: "Collaborate with your creative team",
             features: [
-                "Everything in Plus",
-                "Higher message limits",
-                "Admin console for workspace management",
-                "Team data excluded from training by default",
-                "Create and share GPTs with your workspace"
+                "2000 Credits per month",
+                "Team dashboard & management",
+                "Shared asset library",
+                "Centralized billing",
+                "Priority Support",
+                "Commercial license for teams"
             ]
         },
         {
             id: "Enterprise",
             name: "Enterprise",
             price: 49900,
-            desc: "Scale securely across your organization",
+            desc: "Scale your thumbnail operations",
             features: [
-                "Everything in Team",
-                "Unlimited high-speed GPT-4 access",
-                "Expanded context window",
-                "SAML SSO & Domain Verification",
-                "Enterprise-grade security & privacy",
-                "Custom data retention policies",
-                "Priority support & dedicated account manager"
+                "15,000 Credits per month",
+                "Custom style fine-tuning",
+                "SSO & Enterprise security",
+                "Dedicated Account Manager",
+                "SLA & Uptime guarantees",
+                "Onboarding & training"
             ]
         }
     ];
