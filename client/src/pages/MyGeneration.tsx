@@ -36,11 +36,9 @@ const MyGeneration = () => {
   const handleDownload = (image_url: string) => {
     const link = document.createElement("a");
     link.href = image_url.replace("/upload", "/upload/fl_attachment");
-    link.target = "_blank";
-    link.download = "thumbnail.png";
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    link.remove();
   };
 
   const handleDelete = async (id: string) => {

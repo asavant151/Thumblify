@@ -17,15 +17,13 @@ const PreviewPanel = ({
   } as Record<AspectRatio, string>;
 
   const onDownload = () => {
-    if (!thumbnail?.image_url) return;
-    const link = document.createElement("a");
-    link.href = thumbnail?.image_url.replace("/upload", "/upload/fl_attachment");
-    link.target = "_blank";
-    link.download = "thumbnail.png";
+    if(!thumbnail?.image_url) return;
+    const link = document.createElement('a');
+    link.href = thumbnail?.image_url.replace('/upload', '/upload/fl_attachment')
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
-  };
+    link.remove();
+  }
 
   return (
     <div className="relative mx-auto max-w-2xl">
