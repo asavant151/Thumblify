@@ -12,17 +12,17 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        className="fixed top-0 z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-32 backdrop-blur"
+        className="fixed top-0 z-50 flex items-center justify-between w-full py-4 px-4 md:px-16 lg:px-24 xl:px-32 backdrop-blur"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ type: "spring", stiffness: 250, damping: 70, mass: 1 }}
       >
         <Link to="/">
-          <img src="/logo.svg" alt="logo" className="h-8.5 w-auto" />
+          <img src="/logo.svg" alt="logo" className="h-6.5 md:h-8.5 w-auto" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-8 transition duration-500">
+        <div className="hidden md:flex items-center gap-4 md:gap-8 transition duration-500">
           <Link to="/" className="hover:text-pink-300 transition">
             Home
           </Link>
@@ -42,11 +42,6 @@ export default function Navbar() {
               About
             </Link>
           )}
-
-          <Link to="/pricing" className="hover:text-pink-300 transition">
-            Pricing
-          </Link>
-
           <Link to="#" className="hover:text-pink-300 transition">
             Contact Us
           </Link>
@@ -55,16 +50,6 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           {isLoggedIn ? (
             <div className="flex items-center gap-4">
-              <button
-                onClick={() => navigate('/pricing')}
-                className="flex items-center gap-2 bg-pink-100/10 hover:bg-pink-100/20 px-3 py-1.5 rounded-full transition-colors border border-pink-500/30"
-              >
-                <Zap className="w-4 h-4 text-pink-500 fill-pink-500" />
-                <span className="text-white text-sm font-medium">
-                  {user?.creditBalance ?? 0}
-                </span>
-              </button>
-
               <div className="relative group">
                 <button className="rounded-full size-8 bg-white/20 border-2 border-white/10 flex items-center justify-center">
                   {user?.name.charAt(0).toUpperCase()}
@@ -112,9 +97,7 @@ export default function Navbar() {
             About
           </Link>
         )}
-        <Link onClick={() => setIsOpen(false)} to="/pricing">
-          Pricing
-        </Link>
+
         <Link onClick={() => setIsOpen(false)} to="#">
           Contact Us
         </Link>

@@ -9,7 +9,7 @@ import MyGeneration from "./pages/MyGeneration";
 import YtPreview from "./pages/YtPreview";
 import Login from "./components/Login";
 import AboutUs from "./pages/AboutUs";
-import Pricing from "./pages/Pricing";
+
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
@@ -33,7 +33,7 @@ export default function App() {
                 <Route path="/preview" element={<YtPreview />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/about" element={<AboutUs />} />
-                <Route path="/pricing" element={<Pricing />} />
+
             </Routes>
             <Footer />
         </>

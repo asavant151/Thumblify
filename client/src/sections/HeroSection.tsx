@@ -15,9 +15,9 @@ export default function HeroSection() {
     ];
 
     return (
-        <div className="relative flex flex-col items-center justify-center px-4 md:px-16 lg:px-24 xl:px-32">
+        <div className="relative flex flex-col items-center justify-center px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden">
             <div className="absolute top-30 -z-10 left-1/4 size-72 bg-pink-600 blur-[300px]"></div>
-            <motion.a href="https://prebuiltui.com?utm_source=pixels" className="group flex items-center gap-2 rounded-full p-1 pr-3 mt-44 text-pink-100 bg-pink-200/15"
+            <motion.a href="https://prebuiltui.com?utm_source=pixels" className="group flex items-center gap-2 rounded-full p-1 pr-3 mt-28 md:mt-44 text-pink-100 bg-pink-200/15 max-w-[90%] md:max-w-none hover:bg-pink-200/20 transition-colors"
                 initial={{ y: -20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -26,18 +26,18 @@ export default function HeroSection() {
                 <span className="bg-pink-800 text-white text-xs px-3.5 py-1 rounded-full">
                     NEW
                 </span>
-                <p className="flex items-center gap-1">
-                    <span>Generate your first thumbnail for free </span>
-                    <ChevronRightIcon size={16} className="group-hover:translate-x-0.5 transition duration-300" />
+                <p className="flex items-center gap-1 overflow-hidden">
+                    <span className="truncate text-sm md:text-base">Generate your first thumbnail for free </span>
+                    <ChevronRightIcon size={16} className="group-hover:translate-x-0.5 transition duration-300 flex-shrink-0" />
                 </p>
             </motion.a>
-            <motion.h1 className="text-5xl/17 md:text-6xl/21 font-medium max-w-3xl text-center"
+            <motion.h1 className="text-4xl/tight md:text-6xl/tight font-medium max-w-3xl text-center mt-6"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 240, damping: 70, mass: 1 }}
             >
-                AI Thumbnail Generator for your <span className="move-gradient px-3 rounded-xl text-nowrap">Videos.</span>
+                AI Thumbnail Generator for your <span className="move-gradient px-2 md:px-3 rounded-xl inline-block">Videos.</span>
             </motion.h1>
             <motion.p className="text-base text-center text-slate-200 max-w-lg mt-6"
                 initial={{ y: 50, opacity: 0 }}
@@ -46,16 +46,16 @@ export default function HeroSection() {
                 transition={{ delay: 0.2, type: "spring", stiffness: 320, damping: 70, mass: 1 }}
             >
                 Stop wasting hours on design. Get high-converting thumbnails in seconds with our advanced AI.</motion.p>
-            <motion.div className="flex items-center gap-4 mt-8"
+            <motion.div className="flex flex-col sm:flex-row items-center gap-4 mt-8 w-full sm:w-auto"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
             >
-                <button onClick={() => navigate("/generate")} className="bg-pink-600 hover:bg-pink-700 text-white rounded-full px-7 h-11">
+                <button onClick={() => navigate("/generate")} className="bg-pink-600 hover:bg-pink-700 text-white rounded-full px-7 h-11 w-full sm:w-auto transition-colors">
                     Generate now
                 </button>
-                <button className="flex items-center gap-2 border border-pink-900 hover:bg-pink-950/50 transition rounded-full px-6 h-11">
+                <button className="flex items-center justify-center gap-2 border border-pink-900 hover:bg-pink-950/50 transition rounded-full px-6 h-11 w-full sm:w-auto">
                     <VideoIcon strokeWidth={1} />
                     <span>See how it works</span>
                 </button>

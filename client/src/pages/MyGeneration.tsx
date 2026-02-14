@@ -136,7 +136,7 @@ const MyGeneration = () => {
                   </div>
 
                   {/* CONTENT */}
-                  <div className="p-4 space-y-2">
+                  <div className="p-4 space-y-2 mb-8">
                     <h3 className="text-sm font-semibold text-zinc-100 line-clamp-2">
                       {thumb.title}
                     </h3>
@@ -151,9 +151,9 @@ const MyGeneration = () => {
                         {thumb.aspect_ratio}
                       </span>
                     </div>
-                    <p className="text-xs text-zinc-500">
+                    {/* <p className="text-xs text-zinc-500">
                       {new Date(thumb.createdAt!).toDateString()}
-                    </p>
+                    </p> */}
                   </div>
 
                   <div

@@ -41,23 +41,3 @@ export interface INavLink {
     name: string;
     href: string;
 }
-
-export interface PricingCardProps {
-    pricing: IPricing;
-    index: number;
-}
-
-export interface IPricing {
-    name: string;
-    price: number;
-    period: string;
-    features: string[];
-    mostPopular: boolean;
-}
-
-export interface SectionProps {
-    title: string;
-    description: string;
-    buttonText: string;
-    buttonHref: string;
-}
