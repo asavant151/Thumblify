@@ -49,6 +49,7 @@ app.use(
       mongoUrl: process.env.MONGODB_URI as string,
       collectionName: "sessions",
     }),
+    rolling: true,
   }),
 );
 

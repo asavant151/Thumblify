@@ -79,12 +79,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const logout = async () => {
     try {
-      const { data } = await api.post("/api/auth/logout");
+      await api.post("/api/auth/logout");
       setUser(null);
       setIsLoggedIn(false);
-      toast.success(data.message);
+      toast.success("Logged out successfully");
     } catch (error) {
       console.log(error);
+      setUser(null);
+      setIsLoggedIn(false);
     }
   };
 
@@ -94,16 +96,42 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (data.user) {
         setUser(data.user as IUser);
         setIsLoggedIn(true);
+      } else {
+        setUser(null);
+        setIsLoggedIn(false);
       }
     } catch (error) {
       console.log(error);
+      setUser(null);
+      setIsLoggedIn(false);
     }
   };
 
   useEffect(() => {
+    // Add interceptor to handle 401 Unauthorized responses
+    const interceptor = api.interceptors.response.use(
+      (response) => response,
+      async (error) => {
+        if (error.response?.status === 401) {
+          setUser(null);
+          setIsLoggedIn(false);
+          // Only show toast if user was previously logged in to avoid spam on initial load
+          if (isLoggedIn) {
+            toast.error("Session expired. Please login again.");
+          }
+        }
+        return Promise.reject(error);
+      }
+    );
+
     (async () => {
       await fetchUser();
     })();
+
+    // Cleanup interceptor on unmount
+    return () => {
+      api.interceptors.response.eject(interceptor);
+    };
   }, []);
 
   const value = {
