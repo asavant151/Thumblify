@@ -36,9 +36,11 @@ const MyGeneration = () => {
   const handleDownload = (image_url: string) => {
     const link = document.createElement("a");
     link.href = image_url.replace("/upload", "/upload/fl_attachment");
+    link.target = "_blank";
+    link.download = "thumbnail.png";
     document.body.appendChild(link);
     link.click();
-    link.remove();
+    document.body.removeChild(link);
   };
 
   const handleDelete = async (id: string) => {
@@ -160,21 +162,28 @@ const MyGeneration = () => {
                     onClick={(e) => e.stopPropagation()}
                     className="absolute bottom-2 right-2 max-sm:flex sm:hidden group-hover:flex gap-1.5"
                   >
-                    <Trash2Icon
+                    <button
+                      type="button"
                       onClick={() => handleDelete(thumb._id)}
-                      className="size-6 bg-black/50 p-1 rounded hover:bg-pink-600 transition-all"
-                    />
+                      className="size-6 bg-black/50 p-1 rounded hover:bg-pink-600 transition-all flex items-center justify-center text-zinc-200"
+                    >
+                      <Trash2Icon className="size-4" />
+                    </button>
 
-                    <DownloadIcon
+                    <button
+                      type="button"
                       onClick={() => handleDownload(thumb.image_url!)}
-                      className="size-6 bg-black/50 p-1 rounded hover:bg-pink-600 transition-all"
-                    />
+                      className="size-6 bg-black/50 p-1 rounded hover:bg-pink-600 transition-all flex items-center justify-center text-zinc-200"
+                    >
+                      <DownloadIcon className="size-4" />
+                    </button>
 
                     <Link
                       target="_blank"
                       to={`/preview?thumbnail_url=${thumb.image_url}&title=${thumb.title}`}
+                      className="size-6 bg-black/50 p-1 rounded hover:bg-pink-600 transition-all flex items-center justify-center text-zinc-200"
                     >
-                      <ArrowUpRightIcon className="size-6 bg-black/50 p-1 rounded hover:bg-pink-600 transition-all" />
+                      <ArrowUpRightIcon className="size-4" />
                     </Link>
                   </div>
                 </div>
