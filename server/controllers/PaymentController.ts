@@ -12,7 +12,7 @@ const razorpay = new Razorpay({
 
 // Plan Details (for reference and validation)
 const PLANS = {
-    'Free': { price: 0, credits: 5 },
+    'Free': { price: 0, credits: 25 },
     'Go': { price: 399, credits: 50 }, // Example credits
     'Plus': { price: 1999, credits: 500 }, // Example credits
     'Pro': { price: 19900, credits: 5000 }, // Example credits
